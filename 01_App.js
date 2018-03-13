@@ -50,9 +50,9 @@ Les routes
 ////////////////////////////////////////// Route /
 app.set('view engine', 'ejs'); // générateur de template
 
-// ////////////////////////////////////////changer de langue
+//changer de langue
 
-// ////////////////////////////////////////changer de langue
+
 app.get('/:local(en|fr)', function (req, res) {
 	console.log("req.params.local = "+req.params.local)
 	res.cookie('langueChoisie',req.params.local)
@@ -149,6 +149,7 @@ app.get('/vider', (req, res) => {
 		})
 	res.redirect('/adresse')
 })
+
 //Ajax modifier
 app.post('/ajax_modifier', (req, res) => {
 	console.log('route /ajax_modifier')
@@ -160,6 +161,7 @@ app.post('/ajax_modifier', (req, res) => {
 		 res.send(JSON.stringify(req.body))
 	 })
 })
+
 //Ajax détruire
 app.post('/ajax_detruire/', (req, res) => {
  console.log('route /detruire')
